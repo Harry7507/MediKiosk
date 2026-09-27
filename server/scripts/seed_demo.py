@@ -28,21 +28,21 @@ from app.services.fhir_service import fhir_service
 # Predefined Doctors Dataset (3 Doctors)
 DOCTORS_DATA = [
     {
-        "email": "doctor@patientpilot.org",
-        "alt_email": "dr.rajesh@patientpilot.org",
+        "email": "doctor@medikiosk.org",
+        "alt_email": "dr.rajesh@medikiosk.org",
         "full_name": "Dr. Rajesh Sharma, MD (Cardiologist)",
         "role": "doctor",
         "department": "Cardiology & Intensive Care",
     },
     {
-        "email": "dr.priya@patientpilot.org",
+        "email": "dr.priya@medikiosk.org",
         "alt_email": None,
         "full_name": "Dr. Priya Nair, MD (Internal Medicine & Emergency)",
         "role": "doctor",
         "department": "Emergency & Internal Medicine",
     },
     {
-        "email": "dr.anand@patientpilot.org",
+        "email": "dr.anand@medikiosk.org",
         "alt_email": None,
         "full_name": "Dr. Anand Joshi, MD (Pulmonologist & Critical Care)",
         "role": "doctor",
@@ -53,14 +53,14 @@ DOCTORS_DATA = [
 # Predefined Patients Dataset (4 Diverse Clinical Cases)
 PATIENTS_DATA = [
     {
-        "email": "patient@patientpilot.org",
-        "alt_email": "rajesh.kumar@patientpilot.org",
+        "email": "patient@medikiosk.org",
+        "alt_email": "rajesh.kumar@medikiosk.org",
         "name": "Rajesh Kumar",
         "age": "58",
         "gender": "Male",
         "opd_reg_id": "OPD-2026-0001",
         "contact_number": "+91 98765 43210",
-        "assigned_doctor_email": "doctor@patientpilot.org",
+        "assigned_doctor_email": "doctor@medikiosk.org",
         "vitals": {
             "bp": "142/90",
             "pulse": "84 bpm",
@@ -127,14 +127,14 @@ PATIENTS_DATA = [
         "clinician_notes": "Patient fast-tracked for urgent cardiology review due to acute chest tightness and radiation to left arm. High suspicion of Acute Coronary Syndrome (ACS). Stat ECG and cardiology bedside consult initiated.",
     },
     {
-        "email": "anita.desai@patientpilot.org",
+        "email": "anita.desai@medikiosk.org",
         "alt_email": None,
         "name": "Anita Desai",
         "age": "34",
         "gender": "Female",
         "opd_reg_id": "OPD-2026-0002",
         "contact_number": "+91 98111 22334",
-        "assigned_doctor_email": "dr.anand@patientpilot.org",
+        "assigned_doctor_email": "dr.anand@medikiosk.org",
         "vitals": {
             "bp": "118/76",
             "pulse": "108 bpm",
@@ -201,14 +201,14 @@ PATIENTS_DATA = [
         "clinician_notes": "Acute exacerbation of bronchial asthma with moderate hypoxia (SpO2 91%). Administer humidified oxygen 2 L/min, back-to-back Salbutamol + Ipratropium nebulization, and IV hydrocortisone 100mg stat.",
     },
     {
-        "email": "sunil.verma@patientpilot.org",
+        "email": "sunil.verma@medikiosk.org",
         "alt_email": None,
         "name": "Sunil Verma",
         "age": "45",
         "gender": "Male",
         "opd_reg_id": "OPD-2026-0003",
         "contact_number": "+91 97222 33445",
-        "assigned_doctor_email": "dr.priya@patientpilot.org",
+        "assigned_doctor_email": "dr.priya@medikiosk.org",
         "vitals": {
             "bp": "136/88",
             "pulse": "96 bpm",
@@ -267,14 +267,14 @@ PATIENTS_DATA = [
         "clinician_notes": "Acute abdomen presentation suspicious for Acute Appendicitis with marked neutrophilic leukocytosis. Keep NPO, start IV fluids, emergency bedside abdominal ultrasound and surgical consultation.",
     },
     {
-        "email": "meera.patel@patientpilot.org",
+        "email": "meera.patel@medikiosk.org",
         "alt_email": None,
         "name": "Meera Patel",
         "age": "62",
         "gender": "Female",
         "opd_reg_id": "OPD-2026-0004",
         "contact_number": "+91 99333 44556",
-        "assigned_doctor_email": "dr.priya@patientpilot.org",
+        "assigned_doctor_email": "dr.priya@medikiosk.org",
         "vitals": {
             "bp": "130/82",
             "pulse": "72 bpm",
@@ -367,7 +367,7 @@ PATIENTS_DATA = [
 
 
 async def seed_demo_data():
-    print("🌱 Starting PatientPilot database seeding with multi-doctor & multi-patient test cases...")
+    print("🌱 Starting MediKiosk database seeding with multi-doctor & multi-patient test cases...")
 
     async with engine.begin() as conn:
         # Ensure schema tables exist

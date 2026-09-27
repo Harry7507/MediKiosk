@@ -124,10 +124,10 @@ export const LoginPage: React.FC = () => {
             <Stethoscope className="w-9 h-9" strokeWidth={2.4} />
           </div>
           <h1 className="text-3xl font-extrabold text-white tracking-tight drop-shadow-md">
-            PATIENT<span className="text-primary-blue">PILOT</span>
+            MEDI<span className="text-primary-blue">KIOSK</span>
           </h1>
           <p className="mt-1.5 text-sm text-sky-100/80 drop-shadow-sm font-medium">
-            Autonomous OPD Intake, Triage & Clinician Briefing System
+            AI Clinical History Software Platform • Autonomous Pre-Consultation
           </p>
         </div>
 
@@ -453,40 +453,40 @@ export const LoginPage: React.FC = () => {
                   type="button"
                   onClick={() => {
                     setMode('login');
-                    setLoginEmail('doctor@patientpilot.org');
+                    setLoginEmail('doctor@medikiosk.org');
                     setLoginPassword('Doctor@123');
                     setError(null);
                   }}
                   className="text-left text-[11px] p-2 rounded-lg bg-sky-50/70 hover:bg-sky-100/80 border border-sky-200/60 text-slate-800 transition-colors"
                 >
                   <span className="font-bold block text-sky-900 truncate">Dr. Rajesh (Cardio)</span>
-                  <span className="text-slate-500 text-[10px] truncate block">doctor@patientpilot.org</span>
+                  <span className="text-slate-500 text-[10px] truncate block">doctor@medikiosk.org</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => {
                     setMode('login');
-                    setLoginEmail('dr.priya@patientpilot.org');
+                    setLoginEmail('dr.priya@medikiosk.org');
                     setLoginPassword('Doctor@123');
                     setError(null);
                   }}
                   className="text-left text-[11px] p-2 rounded-lg bg-sky-50/70 hover:bg-sky-100/80 border border-sky-200/60 text-slate-800 transition-colors"
                 >
                   <span className="font-bold block text-sky-900 truncate">Dr. Priya (Internal/ER)</span>
-                  <span className="text-slate-500 text-[10px] truncate block">dr.priya@patientpilot.org</span>
+                  <span className="text-slate-500 text-[10px] truncate block">dr.priya@medikiosk.org</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => {
                     setMode('login');
-                    setLoginEmail('dr.anand@patientpilot.org');
+                    setLoginEmail('dr.anand@medikiosk.org');
                     setLoginPassword('Doctor@123');
                     setError(null);
                   }}
                   className="text-left text-[11px] p-2 rounded-lg bg-sky-50/70 hover:bg-sky-100/80 border border-sky-200/60 text-slate-800 transition-colors"
                 >
                   <span className="font-bold block text-sky-900 truncate">Dr. Anand (Pulmo)</span>
-                  <span className="text-slate-500 text-[10px] truncate block">dr.anand@patientpilot.org</span>
+                  <span className="text-slate-500 text-[10px] truncate block">dr.anand@medikiosk.org</span>
                 </button>
               </div>
             </div>
@@ -498,7 +498,7 @@ export const LoginPage: React.FC = () => {
                   type="button"
                   onClick={() => {
                     setMode('login');
-                    setLoginEmail('patient@patientpilot.org');
+                    setLoginEmail('patient@medikiosk.org');
                     setLoginPassword('Patient@123');
                     setError(null);
                   }}
@@ -511,7 +511,7 @@ export const LoginPage: React.FC = () => {
                   type="button"
                   onClick={() => {
                     setMode('login');
-                    setLoginEmail('anita.desai@patientpilot.org');
+                    setLoginEmail('anita.desai@medikiosk.org');
                     setLoginPassword('Patient@123');
                     setError(null);
                   }}
@@ -524,7 +524,7 @@ export const LoginPage: React.FC = () => {
                   type="button"
                   onClick={() => {
                     setMode('login');
-                    setLoginEmail('sunil.verma@patientpilot.org');
+                    setLoginEmail('sunil.verma@medikiosk.org');
                     setLoginPassword('Patient@123');
                     setError(null);
                   }}
@@ -537,7 +537,7 @@ export const LoginPage: React.FC = () => {
                   type="button"
                   onClick={() => {
                     setMode('login');
-                    setLoginEmail('meera.patel@patientpilot.org');
+                    setLoginEmail('meera.patel@medikiosk.org');
                     setLoginPassword('Patient@123');
                     setError(null);
                   }}

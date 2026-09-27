@@ -24,7 +24,12 @@ if "asyncpg" in db_url:
         import logging
         import os
         project_root = os.path.realpath(os.path.join(os.path.dirname(__file__), "..", ".."))
-        local_db_path = os.path.join(project_root, "patientpilot.db").replace("\\", "/")
+        local_db_path = os.path.join(project_root, "medikiosk.db").replace("\\", "/")
+        if not os.path.exists(local_db_path):
+            old_db = os.path.join(project_root, "patientpilot.db").replace("\\", "/")
+            if os.path.exists(old_db):
+                import shutil
+                shutil.copy2(old_db, local_db_path)
         logging.getLogger(__name__).warning(
             f"asyncpg driver is not installed. Falling back to sqlite+aiosqlite:///{local_db_path}"
         )

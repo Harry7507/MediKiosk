@@ -18,9 +18,15 @@ class SocratesHistorySchema(BaseModel):
 
 class DashavidhaParikshaSchema(BaseModel):
     prakriti: Optional[str] = None
+    vikriti: Optional[str] = None
+    sara: Optional[str] = None
+    samhanana: Optional[str] = None
+    pramana: Optional[str] = None
+    satmya: Optional[str] = None
+    sattva: Optional[str] = None
+    aharaShakti: Optional[str] = None
     agniAharaShakti: Optional[str] = None
     vyayamaShakti: Optional[str] = None
-    satmya: Optional[str] = None
     vaya: Optional[str] = None
     notes: Optional[str] = None
 

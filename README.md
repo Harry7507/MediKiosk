@@ -1,4 +1,4 @@
-# PatientPilot — Multilingual AI-Powered OPD Intake & Triage System
+# MediKiosk — AI Clinical History Software Platform (Multilingual OPD Intake & Triage)
 
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688.svg?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![React](https://img.shields.io/badge/Frontend-React_18-61DAFB.svg?style=flat&logo=react&logoColor=black)](https://reactjs.org/)
@@ -7,7 +7,7 @@
 [![FHIR](https://img.shields.io/badge/Standards-FHIR_R4-E01A22.svg?style=flat)](https://hl7.org/fhir/)
 [![Vibe Coded](https://img.shields.io/badge/Vibe%20Coded-100%25-ff69b4.svg?style=flat)](https://github.com/)
 
-PatientPilot is an intelligent hospital outpatient intake and red-flag triage platform. It combines multilingual voice-enabled conversational clinical reasoning, deterministic red-flag triage safety enforcement, OCR prescription/lab document intelligence, and FHIR interoperability for modern hospital EMR systems.
+MediKiosk is an AI-powered clinical history software platform for hospital outpatient intake and red-flag triage. It combines multilingual voice-enabled conversational clinical reasoning, deterministic red-flag triage safety enforcement, OCR prescription/lab document intelligence, AYUSH history mode capturing Dashavidha Pariksha, and FHIR interoperability for modern hospital EMR systems.
 
 > ⚡ **Note: Proudly Vibe Coded**  
 > This entire codebase was architected, scaffolded, and iterated using AI-assisted vibe coding workflows—pairing rapid prompting and LLM reasoning with production-focused engineering patterns (deterministic clinical safety matrices, async SQLAlchemy, and FHIR R4 schema compliance).
@@ -21,7 +21,7 @@ PatientPilot is an intelligent hospital outpatient intake and red-flag triage pl
 - **Data Layer & ORM**: PostgreSQL hosted via Supabase, SQLAlchemy 2.0 (async), Alembic migrations
 - **Authentication**: Supabase Auth with JWT verification, role-based authorization (`doctor` vs `patient`)
 - **Clinical Safety Engine**: Authoritative deterministic red-flag safety matrix (ACS, Stroke, Airway, SAH, Meningism, Acute Pain)
-- **AI & NLP**: Server-side Google GenAI (Gemini) client for SOCRATES history reasoning, AYUSH Dashavidha Pariksha constitutional evaluation, and multilingual translation across all 23 constitutional and regional languages
+- **AI & NLP**: Server-side Google GenAI (Gemini) client for SOCRATES history reasoning, AYUSH history mode (Dashavidha Pariksha constitutional evaluation), and multilingual translation across all 23 constitutional and regional languages
 - **Interoperability**: FHIR R4-styled JSON documents (`Patient`, `Condition`, `MedicationStatement`, `Observation`, `Composition`, `Bundle`)
 
 ---

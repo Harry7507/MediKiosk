@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     SUPABASE_URL: str = Field(default="https://placeholder.supabase.co")
     SUPABASE_KEY: str = Field(default="placeholder-anon-key")
     SUPABASE_SERVICE_ROLE_KEY: str = Field(default="placeholder-service-key")
-    SUPABASE_JWT_SECRET: str = Field(default="patientpilot-jwt-dev-secret-key-32bytes-minimum!")
+    SUPABASE_JWT_SECRET: str = Field(default="medikiosk-jwt-dev-secret-key-32bytes-minimum!")
 
     # Database
     DATABASE_URL: str = Field(

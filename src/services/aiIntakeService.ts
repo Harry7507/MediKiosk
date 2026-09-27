@@ -69,7 +69,7 @@ export async function analyzePatientInputWithAI(
   const resolvedApiKey = (
     geminiApiKey ||
     ((import.meta as any).env?.VITE_GEMINI_API_KEY) ||
-    (typeof localStorage !== 'undefined' && localStorage.getItem('PATIENTPILOT_GEMINI_API_KEY')) ||
+    (typeof localStorage !== 'undefined' && (localStorage.getItem('MEDIKIOSK_GEMINI_API_KEY') || localStorage.getItem('PATIENTPILOT_GEMINI_API_KEY'))) ||
     ''
   ).trim();
 
@@ -136,7 +136,7 @@ async function executeGeminiAI(
   const ai = new GoogleGenAI({ apiKey });
   const { userMessage, language, currentPhase, currentComplaint, currentSocrates } = params;
 
-  const prompt = `You are the PatientPilot Clinical AI Triage Physician at an OPD hospital kiosk.
+  const prompt = `You are the MediKiosk Clinical AI Triage Physician at an OPD hospital kiosk.
 A patient has communicated the following input in natural language (Voice transcript or typed):
 "${userMessage}"
 

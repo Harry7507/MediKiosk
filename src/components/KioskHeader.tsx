@@ -70,7 +70,7 @@ export const KioskHeader: React.FC<KioskHeaderProps> = ({
         <div style={{ display: 'flex', alignItems: 'center', gap: '22px', flexWrap: 'wrap' }}>
           <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <Phone size={13} color="var(--primary-blue, #23A6F0)" />
-            <span>Call Us: <strong>1-800-PATIENT-PILOT</strong></span>
+            <span>Call Us: <strong>1-800-MEDIKIOSK</strong></span>
           </span>
           <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <MapPin size={13} color="var(--primary-blue, #23A6F0)" />
@@ -135,10 +135,10 @@ export const KioskHeader: React.FC<KioskHeaderProps> = ({
           </div>
           <div>
             <div className="brand-title" style={{ color: 'var(--text-dark, #252B42)', fontWeight: 800, letterSpacing: '-0.02em', fontSize: '1.45rem' }}>
-              PATIENT<span style={{ color: 'var(--primary-blue, #23A6F0)' }}>PILOT</span>
+              MEDI<span style={{ color: 'var(--primary-blue, #23A6F0)' }}>KIOSK</span>
             </div>
             <div className="brand-subtitle" style={{ color: 'var(--text-gray, #737373)', fontWeight: 500, fontSize: '0.75rem' }}>
-              OPD Intake & Triage Portal #04 • Autonomous Pre-Consultation
+              AI Clinical History Software Platform • Autonomous Pre-Consultation
             </div>
           </div>
         </div>
@@ -156,10 +156,10 @@ export const KioskHeader: React.FC<KioskHeaderProps> = ({
             className={`kiosk-btn ayush-toggle ${isAyushActive ? 'active' : ''}`}
             onClick={onToggleAyush}
             style={{ height: '42px', borderRadius: '8px', fontSize: '0.82rem' }}
-            title="Toggle AYUSH / Dashavidha Pariksha Intake Protocol"
+            title="Toggle AYUSH History Mode (Dashavidha Pariksha Intake Protocol)"
           >
             <Leaf size={16} />
-            <span>AYUSH Pariksha</span>
+            <span>AYUSH History Mode</span>
             {isAyushActive && <span style={{ fontSize: '0.68rem', padding: '1px 5px', background: 'rgba(255,255,255,0.25)', borderRadius: '4px' }}>ON</span>}
           </button>
 
@@ -182,7 +182,7 @@ export const KioskHeader: React.FC<KioskHeaderProps> = ({
               border: '1px solid #fecaca',
               cursor: 'pointer'
             }}
-            title="Log out of PatientPilot"
+            title="Log out of MediKiosk"
           >
             <LogOut size={16} />
             <span>Log Out</span>

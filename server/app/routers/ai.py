@@ -59,7 +59,7 @@ async def intake_chat(
 
     # 2. LLM Clinical Reasoning
     if llm_client.is_available:
-        prompt = f"""You are PatientPilot Clinical Intake Assistant at an OPD Hospital Kiosk.
+        prompt = f"""You are MediKiosk Clinical Intake Assistant at an OPD Hospital Kiosk.
 The patient is communicating their symptoms. Current step: {payload.current_step_id or 'General Intake'}.
 Language preference: {lang}.
 Patient message: "{user_msg}"
@@ -118,7 +118,8 @@ async def ayush_assessment(
     current_user: User = Depends(get_current_user),
 ):
     """
-    Ayurvedic / Dashavidha Pariksha assessment.
+    AYUSH History Mode: for Ayurvedic OPDs, an extended interview capturing Dashavidha Pariksha
+    (Prakriti, Vikriti, Sara, Samhanana, Pramana, Satmya, Sattva, Ahara Shakti, Vyayama Shakti, Vaya).
     Computes Prakriti constitution, digestive fire (Agni), and holistic lifestyle advice.
     """
     lang = payload.language or "en"

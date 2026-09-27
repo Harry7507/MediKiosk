@@ -55,7 +55,7 @@ const AppContent: React.FC = () => {
   const [language, setLanguage] = useState<LanguageCode>('en');
   const [isAyushActive, setIsAyushActive] = useState<boolean>(false);
   const [geminiApiKey, setGeminiApiKey] = useState<string>(() => {
-    return localStorage.getItem('PATIENTPILOT_GEMINI_API_KEY') || '';
+    return localStorage.getItem('MEDIKIOSK_GEMINI_API_KEY') || localStorage.getItem('PATIENTPILOT_GEMINI_API_KEY') || '';
   });
 
   // Hero Banner Carousel: cycle every 2000ms (2 seconds)
@@ -347,13 +347,13 @@ const AppContent: React.FC = () => {
             <div className="portal-hero-content" style={{ position: 'relative', zIndex: 10 }}>
               <div className="hero-eyebrow">
                 <Sparkles size={14} color="var(--primary-blue, #23A6F0)" />
-                <span>Welcome to PatientPilot</span>
+                <span>Welcome to MediKiosk</span>
               </div>
               <h1 className="hero-headline">
                 Online OPD Pre-Consultation
               </h1>
               <p className="hero-description">
-                PatientPilot captures your clinical anamnesis, OCR lab & prescription extraction, and deterministic red-flag safety triage before you meet your doctor.
+                MediKiosk is an AI-powered clinical history software platform that captures your clinical anamnesis, OCR lab & prescription extraction, and deterministic red-flag safety triage before you meet your doctor.
               </p>
 
               <div className="hero-cta-group">
@@ -381,7 +381,7 @@ const AppContent: React.FC = () => {
                 </div>
                 <div className="hero-badge-pill">
                   <Leaf size={14} color="var(--accent-lime, #2DC071)" />
-                  <span>AYUSH Pariksha Ready</span>
+                  <span>AYUSH History Mode</span>
                 </div>
                 <div className="hero-badge-pill">
                   <CheckCircle2 size={14} color="var(--primary-blue, #23A6F0)" />
@@ -518,10 +518,10 @@ const AppContent: React.FC = () => {
                 <div className="activity-icon-wrap" style={{ background: '#f0fdf4', color: '#2DC071' }}>
                   <Leaf size={26} />
                 </div>
-                <h3 className="activity-card-title">Health Queries & AYUSH</h3>
+                <h3 className="activity-card-title">AYUSH History Mode</h3>
                 <div className="activity-card-divider" style={{ background: '#2DC071' }}></div>
                 <p className="activity-card-desc">
-                  Constitutional Dashavidha Pariksha evaluating Prakriti, Agni, Satmya, and Sara for holistic integrative medicine.
+                  For Ayurvedic OPDs, an extended interview capturing Dashavidha Pariksha (Prakriti, Vikriti, Sara, Samhanana, Pramana, Satmya, Sattva, Ahara Shakti, Vyayama Shakti, Vaya).
                 </p>
               </div>
 
@@ -651,6 +651,7 @@ const AppContent: React.FC = () => {
         geminiApiKey={geminiApiKey}
         onSaveApiKey={(key) => {
           setGeminiApiKey(key);
+          localStorage.setItem('MEDIKIOSK_GEMINI_API_KEY', key);
           localStorage.setItem('PATIENTPILOT_GEMINI_API_KEY', key);
         }}
       />

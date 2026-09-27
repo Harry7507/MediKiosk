@@ -34,9 +34,9 @@ SUPPORTED_LANGUAGES: Dict[str, Dict[str, str]] = {
 # Pre-localized common clinical phrases for instantaneous response without LLM latency
 STANDARD_LOCALIZED_PHRASES: Dict[str, Dict[str, str]] = {
     "welcome": {
-        "en": "Welcome to PatientPilot OPD Intake. Please describe your symptoms.",
-        "hi": "पेशेंटपायलट ओपीडी में आपका स्वागत है। कृपया अपने लक्षणों का वर्णन करें।",
-        "bn": "পেশেন্টপাইলট ওপিডিতে স্বাগতম। অনুগ্রহ করে আপনার লক্ষণগুলি জানান।",
+        "en": "Welcome to MediKiosk OPD Intake. Please describe your symptoms.",
+        "hi": "मेडीकिओस्क (MediKiosk) ओपीडी में आपका स्वागत है। कृपया अपने लक्षणों का वर्णन करें।",
+        "bn": "মেডিকিওস্ক ওপিডিতে স্বাগতম। অনুগ্রহ করে আপনার লক্ষণগুলি জানান।",
     },
     "emergency_warning": {
         "en": "CRITICAL RED-FLAG DETECTED: Please do not wait in queue. An emergency physician is being alerted.",
@@ -47,7 +47,7 @@ STANDARD_LOCALIZED_PHRASES: Dict[str, Dict[str, str]] = {
 
 
 class LocalizationService:
-    """Centralized multilingual translation & localization service for PatientPilot."""
+    """Centralized multilingual translation & localization service for MediKiosk."""
 
     def is_supported(self, lang_code: str) -> bool:
         return lang_code in SUPPORTED_LANGUAGES

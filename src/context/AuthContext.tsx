@@ -87,13 +87,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const loginOfflineDemo = useCallback((targetRole: 'patient' | 'doctor') => {
     const demoUser: AuthUser = targetRole === 'doctor' ? {
       id: 'bf337d0c-df0d-4ce1-87ea-7d9cd7f95fbd',
-      email: 'doctor@patientpilot.org',
+      email: 'doctor@medikiosk.org',
       role: 'doctor',
       fullName: 'Dr. Rajesh Sharma, MD (Cardiologist)',
       isFirstLogin: false
     } : {
       id: 'e66ce660-03ca-46c1-a8ba-aac8977e469a',
-      email: 'patient@patientpilot.org',
+      email: 'patient@medikiosk.org',
       role: 'patient',
       fullName: 'Rajesh Kumar',
       isFirstLogin: false

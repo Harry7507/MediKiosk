@@ -1,1 +1,1 @@
-# PatientPilot FastAPI Application
+# MediKiosk FastAPI Application

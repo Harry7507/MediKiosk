@@ -17,12 +17,12 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
 )
-logger = logging.getLogger("patientpilot")
+logger = logging.getLogger("medikiosk")
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info("Starting PatientPilot Backend API...")
+    logger.info("Starting MediKiosk Backend API...")
     logger.info(f"Environment: {settings.ENVIRONMENT}")
     logger.info(f"CORS Allowed Origins: {settings.CORS_ORIGINS}")
     # Ensure database tables exist
@@ -34,13 +34,13 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         logger.warning(f"Could not verify schema on startup: {e}")
     yield
-    logger.info("Shutting down PatientPilot Backend API...")
+    logger.info("Shutting down MediKiosk Backend API...")
 
 
 
 app = FastAPI(
-    title="PatientPilot Backend API",
-    description="Production-grade OPD clinical intake, deterministic safety matrix triage, and FHIR interoperability backend.",
+    title="MediKiosk Backend API",
+    description="MediKiosk AI Clinical History Software Platform - Production-grade OPD clinical intake, deterministic safety matrix triage, and FHIR interoperability backend.",
     version="1.0.0",
     lifespan=lifespan,
     docs_url="/docs",
@@ -67,7 +67,7 @@ app.add_middleware(
 async def health_check():
     return {
         "status": "healthy",
-        "service": "PatientPilot Backend",
+        "service": "MediKiosk Backend",
         "version": "1.0.0",
     }
 

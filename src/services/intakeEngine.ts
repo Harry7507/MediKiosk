@@ -1,4 +1,4 @@
-// Adaptive SOCRATES Intake Question Engine for PatientPilot
+// Adaptive SOCRATES Intake Question Engine for MediKiosk
 
 import { LanguageCode, SocratesHistory, PatientDemographics } from '../types/clinical';
 import { getLocalizedText, LOCALIZED_COMPLAINTS } from './localizationService';

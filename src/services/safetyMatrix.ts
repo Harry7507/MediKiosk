@@ -1,4 +1,4 @@
-// Deterministic Red-Flag Safety Matrix for PatientPilot
+// Deterministic Red-Flag Safety Matrix for MediKiosk
 // Strict safety boundary enforcement as specified in AGENT SPECIFICATION
 
 import { TriageLevel, TriageResult, SafetyRuleTrigger, SocratesHistory } from '../types/clinical';

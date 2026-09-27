@@ -1,4 +1,4 @@
-// Centralized Localization Service for PatientPilot OPD Portal
+// Centralized Localization Service for MediKiosk OPD Portal
 import { LanguageCode } from '../types/clinical';
 import { INDIAN_LANGUAGES, getLanguageMeta } from '../constants/languages';
 

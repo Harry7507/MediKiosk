@@ -93,7 +93,7 @@ export async function processMedicalDocument(
       const mimeType = file.type || 'image/jpeg';
       
       const ai = new GoogleGenAI({ apiKey: geminiApiKey });
-      const prompt = `You are PatientPilot OCR Assistant. Analyze this uploaded medical image (prescription, lab report, or discharge summary).
+      const prompt = `You are MediKiosk OCR Assistant. Analyze this uploaded medical image (prescription, lab report, or discharge summary).
 Return ONLY a valid JSON object with the following structure, without backticks or markdown preamble:
 {
   "documentType": "Prescription" | "Lab Report" | "Discharge Summary" | "Other",

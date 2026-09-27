@@ -21,7 +21,7 @@ async def test_full_doctor_and_patient_e2e_cycle():
     async with httpx.AsyncClient(transport=transport, base_url="http://test/api/v1", timeout=15.0) as client:
         # 1. Doctor Login
         doc_login_res = await client.post("/auth/login", json={
-            "email": "doctor@patientpilot.org",
+            "email": "doctor@medikiosk.org",
             "password": "DoctorPass123!"
         })
         assert doc_login_res.status_code == 200, f"Doctor login failed: {doc_login_res.text}"
@@ -86,7 +86,7 @@ async def test_full_doctor_and_patient_e2e_cycle():
 
         # 7. Patient Login
         pat_login_res = await client.post("/auth/login", json={
-            "email": "patient@patientpilot.org",
+            "email": "patient@medikiosk.org",
             "password": "PatientPass123!"
         })
         assert pat_login_res.status_code == 200

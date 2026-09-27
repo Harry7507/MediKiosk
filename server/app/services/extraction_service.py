@@ -54,7 +54,7 @@ class ExtractionService:
         Uses multimodal Gemini Vision if available, otherwise falls back to intelligent local parser.
         """
         if llm_client.is_available:
-            prompt = """You are PatientPilot Clinical Document Intelligence Engine.
+            prompt = """You are MediKiosk Clinical Document Intelligence Engine.
 Analyze this uploaded medical document (prescription, lab report, or discharge summary).
 Return ONLY a valid JSON object matching the exact structure below, without code backticks or markdown preamble:
 {

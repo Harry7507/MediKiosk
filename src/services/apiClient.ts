@@ -1,4 +1,4 @@
-// PatientPilot Thin API Client with Automatic 401 Token Refresh
+// MediKiosk Thin API Client with Automatic 401 Token Refresh
 // Connects React frontend to FastAPI backend (/api/v1)
 
 import {

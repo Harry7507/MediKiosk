@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/auth", tags=["Auth"])
 limiter = Limiter(key_func=get_remote_address)
 
-DEV_JWT_SECRET = "patientpilot-dev-jwt-secret-key-32bytes-for-rfc7518"
+DEV_JWT_SECRET = "medikiosk-dev-jwt-secret-key-32bytes-for-rfc7518"
 
 def get_jwt_secret() -> str:
     if settings.SUPABASE_JWT_SECRET and settings.SUPABASE_JWT_SECRET != "placeholder-jwt-secret":

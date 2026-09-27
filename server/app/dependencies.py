@@ -35,8 +35,9 @@ async def get_current_user(
     # Development / Offline demo token handling
     if token.startswith("demo-"):
         target_role = "doctor" if "doctor" in token else "patient"
-        target_email = "doctor@patientpilot.org" if target_role == "doctor" else "patient@patientpilot.org"
-        demo_result = await db.execute(select(User).where(User.email == target_email))
+        target_email = "doctor@medikiosk.org" if target_role == "doctor" else "patient@medikiosk.org"
+        alt_email = "doctor@patientpilot.org" if target_role == "doctor" else "patient@patientpilot.org"
+        demo_result = await db.execute(select(User).where(User.email.in_([target_email, alt_email])))
         demo_user = demo_result.scalar_one_or_none()
         if not demo_user:
             demo_fallback = await db.execute(select(User).where(User.role == target_role))
@@ -49,7 +50,7 @@ async def get_current_user(
 
     # 1. Try decoding with configured Supabase JWT secret
     try:
-        DEV_JWT_SECRET = "patientpilot-dev-jwt-secret-key-32bytes-for-rfc7518"
+        DEV_JWT_SECRET = "medikiosk-dev-jwt-secret-key-32bytes-for-rfc7518"
         secret = settings.SUPABASE_JWT_SECRET if (settings.SUPABASE_JWT_SECRET and settings.SUPABASE_JWT_SECRET != "placeholder-jwt-secret") else DEV_JWT_SECRET
         try:
             payload = jwt.decode(
@@ -92,7 +93,7 @@ async def get_current_user(
         # If user exists in Supabase Auth but not in application table yet, auto-provision as patient
         user = User(
             id=user_uuid,
-            email=email or f"user_{user_uuid}@patientpilot.org",
+            email=email or f"user_{user_uuid}@medikiosk.org",
             role="patient",
             full_name=email.split("@")[0] if email else "Patient",
         )

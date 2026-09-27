@@ -169,7 +169,7 @@ export const ClinicianDashboardView: React.FC<ClinicianDashboardViewProps> = ({
   const handleCopyEMR = () => {
     if (!activeBriefing) return;
 
-    const emrText = `=== PATIENTPILOT CLINICAL INTAKE BRIEFING ===
+    const emrText = `=== MEDIKIOSK CLINICAL INTAKE BRIEFING ===
 Patient: ${activeBriefing.patient.name} (${activeBriefing.patient.age}y / ${activeBriefing.patient.gender}) | OPD Token: ${activeBriefing.patient.opdRegId}
 Date/Time: ${activeBriefing.createdAt}
 Triage Level: ${activeBriefing.triage.triage_level}
@@ -202,7 +202,7 @@ ${activeBriefing.abnormalLabs.length > 0
   ? activeBriefing.abnormalLabs.map(l => `- ${l.test_name}: ${l.result} ${l.reference_unit} [${l.status}] (Ref: ${l.normal_range || 'N/A'})`).join('\n')
   : 'None uploaded'}
 
-${activeBriefing.isAyushActive && activeBriefing.ayushAssessment ? `6. AYUSH DASHAVIDHA PARIKSHA:
+${activeBriefing.isAyushActive && activeBriefing.ayushAssessment ? `6. AYUSH HISTORY MODE (DASHAVIDHA PARIKSHA):
 ${evaluateAyushSummary(activeBriefing.ayushAssessment)}` : ''}
 
 7. CLINICAL SAFETY MATRIX AUDIT:
@@ -720,7 +720,7 @@ DISCLAIMER: Autonomous Pre-Consultation Intake Assistant briefing. NOT a diagnos
               <div className="mb-7">
                 <h2 className="text-sm font-extrabold text-emerald-700 mb-3 flex items-center gap-2 uppercase tracking-wider">
                   <Leaf size={16} />
-                  <span>5. AYUSH / Ayurvedic Intake (Dashavidha Pariksha)</span>
+                  <span>5. AYUSH History Mode (Dashavidha Pariksha)</span>
                 </h2>
 
                 <div className="bg-emerald-50/60 border border-emerald-200 rounded-xl p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -798,7 +798,7 @@ DISCLAIMER: Autonomous Pre-Consultation Intake Assistant briefing. NOT a diagnos
 
             {/* Mandatory Clinical Disclaimer */}
             <div className="disclaimer-banner mt-6 p-3 rounded-xl bg-slate-100 border border-slate-200 text-[11px] text-slate-600 leading-relaxed">
-              <strong>CLINICAL AI INTAKE MANDATE:</strong> PatientPilot is an autonomous pre-consultation clinical intake and triage assistant. It is strictly not a diagnostician or treating physician. It does not alter medications or recommend treatment plans. Physical verification, clinical correlation, and diagnostic judgment by a registered medical practitioner are mandatory under NMC guidelines.
+              <strong>CLINICAL AI INTAKE MANDATE:</strong> MediKiosk is an autonomous pre-consultation clinical history software platform and intake assistant. It is strictly not a diagnostician or treating physician. It does not alter medications or recommend treatment plans. Physical verification, clinical correlation, and diagnostic judgment by a registered medical practitioner are mandatory under NMC guidelines.
             </div>
           </div>
         )}

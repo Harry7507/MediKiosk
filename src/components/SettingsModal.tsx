@@ -72,7 +72,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               style={{ width: '100%', height: '48px', fontSize: '0.9rem' }}
             />
             <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: '6px' }}>
-              When left blank, PatientPilot seamlessly uses its built-in offline clinical parser and sample records.
+              When left blank, MediKiosk seamlessly uses its built-in offline clinical parser and sample records.
             </p>
           </div>
 

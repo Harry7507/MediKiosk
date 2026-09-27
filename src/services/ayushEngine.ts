@@ -1,4 +1,4 @@
-// AYUSH / Ayurveda Dashavidha Pariksha Assessment Module
+// AYUSH History Mode: for Ayurvedic OPDs, an extended interview capturing Dashavidha Pariksha (Prakriti, Vikriti, Sara, Samhanana, Pramana, Satmya, Sattva, Ahara Shakti, Vyayama Shakti, Vaya)
 
 import { DashavidhaPariksha, LanguageCode } from '../types/clinical';
 import { getLocalizedText } from './localizationService';
@@ -203,10 +203,15 @@ export const DASHAVIDHA_QUESTIONS: AyushQuestion[] = [
 
 export function evaluateAyushSummary(factors: DashavidhaPariksha): string {
   const parts: string[] = [];
-  if (factors.prakriti) parts.push(`Constitutional Tendency: ${factors.prakriti}`);
-  if (factors.agniAharaShakti) parts.push(`Digestive Fire (Agni): ${factors.agniAharaShakti}`);
-  if (factors.vyayamaShakti) parts.push(`Physical Strength: ${factors.vyayamaShakti}`);
-  if (factors.satmya) parts.push(`Habituation (Satmya): ${factors.satmya}`);
+  if (factors.prakriti) parts.push(`Constitutional Tendency (Prakriti): ${factors.prakriti}`);
+  if (factors.vikriti) parts.push(`Pathological Imbalance (Vikriti): ${factors.vikriti}`);
+  if (factors.sara) parts.push(`Tissue Quality (Sara): ${factors.sara}`);
+  if (factors.samhanana) parts.push(`Physical Compactness (Samhanana): ${factors.samhanana}`);
+  if (factors.pramana) parts.push(`Anthropometry (Pramana): ${factors.pramana}`);
+  if (factors.satmya) parts.push(`Adaptability/Habituation (Satmya): ${factors.satmya}`);
+  if (factors.sattva) parts.push(`Mental Strength (Sattva): ${factors.sattva}`);
+  if (factors.aharaShakti || factors.agniAharaShakti) parts.push(`Digestive Power (Agni / Ahara Shakti): ${factors.aharaShakti || factors.agniAharaShakti}`);
+  if (factors.vyayamaShakti) parts.push(`Exercise Capacity (Vyayama Shakti): ${factors.vyayamaShakti}`);
   if (factors.vaya) parts.push(`Life Stage (Vaya): ${factors.vaya}`);
   return parts.join(' | ') || 'No AYUSH assessment recorded';
 }

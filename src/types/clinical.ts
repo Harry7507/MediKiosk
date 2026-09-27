@@ -1,4 +1,4 @@
-// Clinical types for PatientPilot OPD Portal Intake & Triage Agent
+// Clinical types for MediKiosk AI Clinical History Software Platform & Triage Agent
 
 export type TriageLevel = 'EMERGENCY' | 'HIGH_PRIORITY' | 'ROUTINE';
 
@@ -82,11 +82,17 @@ export interface DocumentExtraction {
 }
 
 export interface DashavidhaPariksha {
-  prakriti?: 'Vata' | 'Pitta' | 'Kapha' | 'Vata-Pitta' | 'Pitta-Kapha' | 'Vata-Kapha' | 'Tridosha';
-  agniAharaShakti?: 'Mandagni (Low/Sluggish)' | 'Tikshnagni (Sharp/Hyper)' | 'Vishamagni (Irregular)' | 'Samagni (Balanced)';
-  vyayamaShakti?: 'Pravara (High Endurance)' | 'Madhyama (Moderate)' | 'Avara (Low/Easily Fatigued)';
+  prakriti?: 'Vata' | 'Pitta' | 'Kapha' | 'Vata-Pitta' | 'Pitta-Kapha' | 'Vata-Kapha' | 'Tridosha' | string;
+  vikriti?: string;
+  sara?: string;
+  samhanana?: string;
+  pramana?: string;
   satmya?: string; // Dietary adaptability & habituation
-  vaya?: 'Bala (Childhood)' | 'Madhyama (Youth/Adulthood)' | 'Vriddha (Elderly)';
+  sattva?: string;
+  aharaShakti?: string;
+  agniAharaShakti?: 'Mandagni (Low/Sluggish)' | 'Tikshnagni (Sharp/Hyper)' | 'Vishamagni (Irregular)' | 'Samagni (Balanced)' | string;
+  vyayamaShakti?: 'Pravara (High Endurance)' | 'Madhyama (Moderate)' | 'Avara (Low/Easily Fatigued)' | string;
+  vaya?: 'Bala (Childhood)' | 'Madhyama (Youth/Adulthood)' | 'Vriddha (Elderly)' | string;
   notes?: string;
 }
 

@@ -202,7 +202,7 @@ export const SidebarStatusPanel: React.FC<SidebarStatusPanelProps> = ({
       {isAyushActive && (
         <div style={{ background: '#f0fdf4', border: '1px solid #86efac', borderRadius: '14px', padding: '12px 14px' }}>
           <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#15803d', display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
-            <Leaf size={14} /> AYUSH Dashavidha Active
+            <Leaf size={14} /> AYUSH History Mode Active
           </div>
           <div style={{ fontSize: '0.74rem', color: '#166534' }}>
             {ayushAssessment.prakriti ? `Prakriti: ${ayushAssessment.prakriti}` : 'Constitutional evaluation ongoing'}

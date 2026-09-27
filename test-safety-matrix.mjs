@@ -1,4 +1,4 @@
-// Automated test suite for PatientPilot Deterministic Safety Matrix
+// Automated test suite for MediKiosk Deterministic Safety Matrix
 
 import assert from 'assert';
 

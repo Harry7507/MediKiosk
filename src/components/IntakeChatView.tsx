@@ -134,9 +134,9 @@ export const IntakeChatView: React.FC<IntakeChatViewProps> = ({
       const initialGreeting: ChatMessage = {
         id: 'init_welcome',
         sender: 'assistant',
-        text: 'Welcome to PatientPilot OPD Intake. You can speak into the microphone or type any symptom, discomfort, or question in your own words. How are you feeling today?',
+        text: 'Welcome to MediKiosk OPD Intake. You can speak into the microphone or type any symptom, discomfort, or question in your own words. How are you feeling today?',
         localizedText: language === 'hi' 
-          ? 'पेशेंटपायलट ओपीडी में आपका स्वागत है। आप माइक्रोफ़ोन से बोल सकते हैं या अपने लक्षण यहां टाइप कर सकते हैं। आज आप कैसा महसूस कर रहे हैं?'
+          ? 'मेडीकिओस्क (MediKiosk) ओपीडी में आपका स्वागत है। आप माइक्रोफ़ोन से बोल सकते हैं या अपने लक्षण यहां टाइप कर सकते हैं। आज आप कैसा महसूस कर रहे हैं?'
           : undefined,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         suggestedOptions: ['Severe Chest Pain', 'Shortness of Breath', 'High Fever & Chills', 'Severe Headache']
@@ -364,7 +364,7 @@ export const IntakeChatView: React.FC<IntakeChatViewProps> = ({
               {phase === 'chief_complaint' && 'Step 2: Chief Complaint'}
               {phase === 'socrates' && `Step 3: Clinical SOCRATES (${socratesStepIndex + 1}/${adaptiveSteps.length})`}
               {phase === 'chronic' && 'Step 4: Past Medical History'}
-              {phase === 'ayush' && `Step 5: AYUSH Dashavidha Pariksha (${ayushStepIndex + 1}/${DASHAVIDHA_QUESTIONS.length})`}
+              {phase === 'ayush' && `Step 5: AYUSH History Mode (${ayushStepIndex + 1}/${DASHAVIDHA_QUESTIONS.length})`}
               {phase === 'review' && 'Intake Complete: Ready for Clinician'}
             </span>
           </div>
@@ -413,7 +413,7 @@ export const IntakeChatView: React.FC<IntakeChatViewProps> = ({
                     <div className="ai-agent-header">
                       <div className="ai-agent-badge">
                         <Sparkles size={13} />
-                        <span>PatientPilot Clinical AI (Gemini)</span>
+                        <span>MediKiosk Clinical AI (Gemini)</span>
                       </div>
                       <span style={{ fontSize: '0.68rem', color: '#94a3b8' }}>{msg.timestamp}</span>
                     </div>
@@ -504,7 +504,7 @@ export const IntakeChatView: React.FC<IntakeChatViewProps> = ({
         {isAIThinking && (
           <div className="ai-thinking-pill">
             <Sparkles size={15} className="animate-spin" />
-            <span>PatientPilot AI is reasoning clinical parameters with Gemini...</span>
+            <span>MediKiosk AI is reasoning clinical parameters with Gemini...</span>
           </div>
         )}
 
@@ -751,7 +751,7 @@ export const IntakeChatView: React.FC<IntakeChatViewProps> = ({
           <div style={{ flex: 1 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
               <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2DC071', textTransform: 'uppercase' }}>
-                AYUSH Dashavidha Pariksha
+                AYUSH History Mode (Dashavidha Pariksha)
               </span>
               <span style={{ color: '#cbd5e1' }}>•</span>
               <span style={{ fontSize: '0.8rem', color: 'var(--text-gray, #737373)' }}>
@@ -903,7 +903,7 @@ export const IntakeChatView: React.FC<IntakeChatViewProps> = ({
               isListening 
                 ? 'Listening to your voice... (Speak clearly now)' 
                 : isAIThinking
-                ? 'PatientPilot AI is reasoning your input...'
+                ? 'MediKiosk AI is reasoning your input...'
                 : language === 'hi' 
                 ? 'अपनी आवाज से बोलें या यहां टाइप करें...' 
                 : language === 'bn' 
@@ -936,7 +936,7 @@ export const IntakeChatView: React.FC<IntakeChatViewProps> = ({
             style={{ width: '52px', height: '52px', padding: 0, justifyContent: 'center', borderRadius: '12px' }}
             onClick={handleSubmitText}
             disabled={isAIThinking || (!textInput.trim() && !isListening)}
-            title="Send to PatientPilot Clinical AI"
+            title="Send to MediKiosk Clinical AI"
           >
             {isAIThinking ? (
               <Loader2 size={20} className="animate-spin" />

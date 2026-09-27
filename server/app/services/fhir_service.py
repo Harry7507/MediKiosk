@@ -5,7 +5,7 @@ from uuid import UUID
 
 class FHIRService:
     """
-    Transforms internal PatientPilot entities into FHIR R4-styled JSON documents.
+    Transforms internal MediKiosk entities into FHIR R4-styled JSON documents.
     Ensures hospital EMR and insurer interoperability.
     """
 
@@ -18,7 +18,7 @@ class FHIRService:
             "id": str(patient_profile.id),
             "identifier": [
                 {
-                    "system": "urn:oid:patientpilot:opd_reg_id",
+                    "system": "urn:oid:medikiosk:opd_reg_id",
                     "value": patient_profile.opd_reg_id,
                 }
             ],
@@ -29,11 +29,11 @@ class FHIRService:
             ] if patient_profile.contact_number else [],
             "extension": [
                 {
-                    "url": "http://patientpilot.org/fhir/StructureDefinition/patient-age",
+                    "url": "http://medikiosk.org/fhir/StructureDefinition/patient-age",
                     "valueString": str(patient_profile.age),
                 },
                 {
-                    "url": "http://patientpilot.org/fhir/StructureDefinition/intake-vitals",
+                    "url": "http://medikiosk.org/fhir/StructureDefinition/intake-vitals",
                     "valueQuantity": vitals,
                 },
             ],
@@ -137,7 +137,7 @@ class FHIRService:
             "subject": {"reference": f"Patient/{patient_profile.id}", "display": patient_profile.name},
             "date": (briefing.reviewed_at or datetime.now(timezone.utc)).isoformat(),
             "author": [{"reference": f"Practitioner/{doctor_id}"}] if doctor_id else [],
-            "title": "PatientPilot OPD Intake & Clinical Briefing",
+            "title": "MediKiosk OPD Intake & Clinical Briefing",
             "section": [
                 {
                     "title": "Chief Complaint & History of Present Illness (SOCRATES)",
