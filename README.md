@@ -7,47 +7,51 @@
 [![FHIR](https://img.shields.io/badge/Standards-FHIR_R4-E01A22.svg?style=flat)](https://hl7.org/fhir/)
 [![Vibe Coded](https://img.shields.io/badge/Vibe%20Coded-100%25-ff69b4.svg?style=flat)](https://github.com/)
 
-MediKiosk is an AI-powered clinical history software platform for hospital outpatient intake and red-flag triage. It combines multilingual voice-enabled conversational clinical reasoning, deterministic red-flag triage safety enforcement, OCR prescription/lab document intelligence, AYUSH history mode capturing Dashavidha Pariksha, and FHIR interoperability for modern hospital EMR systems.
-
-> ⚡ **Note: Proudly Vibe Coded**  
-> This entire codebase was architected, scaffolded, and iterated using AI-assisted vibe coding workflows—pairing rapid prompting and LLM reasoning with production-focused engineering patterns (deterministic clinical safety matrices, async SQLAlchemy, and FHIR R4 schema compliance).
+> An AI-powered, multilingual clinical history intake and smart hospital kiosk platform designed to streamline patient triaging, record symptoms, digitize medical documents, and generate structured clinical summaries for healthcare providers.
 
 ---
 
-## 🏗 System Architecture
+## Overview
 
-- **Frontend**: React 18, Vite, TypeScript, Lucide Icons, Canvas Confetti
-- **Backend Framework**: Python 3.10+, FastAPI (Versioned REST API under `/api/v1`)
-- **Data Layer & ORM**: PostgreSQL hosted via Supabase, SQLAlchemy 2.0 (async), Alembic migrations
-- **Authentication**: Supabase Auth with JWT verification, role-based authorization (`doctor` vs `patient`)
-- **Clinical Safety Engine**: Authoritative deterministic red-flag safety matrix (ACS, Stroke, Airway, SAH, Meningism, Acute Pain)
-- **AI & NLP**: Server-side Google GenAI (Gemini) client for SOCRATES history reasoning, AYUSH history mode (Dashavidha Pariksha constitutional evaluation), and multilingual translation across all 23 constitutional and regional languages
-- **Interoperability**: FHIR R4-styled JSON documents (`Patient`, `Condition`, `MedicationStatement`, `Observation`, `Composition`, `Bundle`)
+**MediKiosk** bridges the gap between arriving patients and healthcare workers by automating the initial clinical history intake. Built to operate as an interactive point-of-care kiosk (and companion web portal), it allows patients to input symptoms via speech or text in their native language, scan prior prescriptions or diagnostic reports, and produce structured, clinician-ready intake summaries before the patient enters the consultation room.
 
 ---
 
-## 🚀 Getting Started
+## Key Features
 
-### 1. Supabase Project Setup
-
-1. Log in to [Supabase](https://supabase.com) and create a new project.
-2. In the Supabase Dashboard, go to **Project Settings** -> **API**:
-   - Copy the **Project URL** (`SUPABASE_URL`)
-   - Copy the **anon public key** (`SUPABASE_KEY`)
-   - Copy the **service_role secret key** (`SUPABASE_SERVICE_ROLE_KEY`)
-   - Copy the **JWT Secret** under *JWT Settings* (`SUPABASE_JWT_SECRET`)
-3. Go to **Project Settings** -> **Database** -> **Connection string**:
-   - Select **URI** (Direct connection or Session pooler)
-   - Copy the connection string and ensure it uses the async driver prefix: `postgresql+asyncpg://`
-4. Go to **Storage**:
-   - Create a new bucket named `medical_documents` (configure public or authenticated read as needed).
+- **Multilingual Patient Intake:** Guided questionnaire supporting regional and native languages via speech-to-text and intuitive touchscreen UI.
+- **AI-Driven Clinical Summaries:** Uses LLM inference to synthesize raw patient descriptions into standardized clinical notes (Chief Complaints, History of Present Illness, Allergies, Current Medications).
+- **Medical Document Digitization (OCR):** Scans and extracts key clinical data from previous lab reports, prescriptions, and discharge summaries.
+- **Triage & Acuity Scoring:** Highlights urgent symptoms and flagged vitals to help prioritize waiting queues.
+- **Doctor Dashboard:** Dedicated clinician view for reviewing structured intake data, original transcriptions, and digitized records in real time.
 
 ---
 
-### 2. Backend Environment Setup
+## Tech Stack
 
-Navigate to the `server/` directory and configure your environment variables:
+- **Frontend:** React / Vite, TypeScript, Tailwind CSS
+- **Backend:** Node.js (Express) / Python (FastAPI)
+- **AI & ML:** Gemini API / Vision Models (OCR, symptom extraction, and summarization)
+- **Database & Auth:** Firebase / MongoDB / PostgreSQL
+- **Audio & Speech:** Web Speech API / Cloud Speech-to-Text
 
-```bash
-cd server
-cp .env.example .env
+---
+
+## Architecture Flow
+
+```text
+[ Patient / Kiosk Terminal ]
+        │
+        ├── (Speech / Audio Input)  ──► [ Speech-to-Text ]
+        ├── (Prescription Scan)     ──► [ Document OCR ]
+        └── (Symptom Prompts)       ──► [ Multilingual Form State ]
+                                                  │
+                                                  ▼
+                                       [ Backend API Layer ]
+                                                  │
+                                                  ▼
+                                      [ LLM Intake Engine ]
+                                  (Summarization & Extraction)
+                                                  │
+                                                  ▼
+                                       [ Clinician Dashboard ]
